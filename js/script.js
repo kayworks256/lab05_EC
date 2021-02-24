@@ -1,18 +1,17 @@
-/*eslint-env browser*/
-
-var miles;
-var gallons;
-var mpg;
-var again = "y";
+let miles;
+let gallons;
+let mpg;
+let again = 'y';
 
 do {
-    miles = parseFloat(window.prompt("Enter miles driven"));
-    gallons = parseFloat(window.prompt("Enter size of tank in gallons"));
+    miles = parseFloat(prompt('Enter miles driven'));
+    gallons = parseFloat(prompt('How many gallons does your car\'s tank hold'));
     if (!isNaN(miles) && miles > 0 && !isNaN(gallons) && gallons > 0) {
         mpg = miles / gallons;
-        window.document.write("Miles per gallon: " + parseInt(mpg, 10));
+        console.log(`Your car gets ${mpg.toFixed(2)} miles per gallon.`);
     } else {
-        window.alert("One or both entries are invalid");
+        alert('One or both entries are invalid.');
     }
-    again = window.prompt("Repeat entries? (y/n)", "y");
-} while (again === "y");
+    again = prompt('Run application again? (y or n)', 'y');
+} while (again === 'y');
+console.log('Application has exited.');
