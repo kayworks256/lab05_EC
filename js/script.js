@@ -12,6 +12,8 @@ do {
     } else {
         alert('One or both entries are invalid.');
     }
-    again = prompt('Run application again? (y or n)', 'y');
+    do {
+        again = prompt('Run application again? (y or n)', 'y');
+    }  while (again !== 'y' && again !== 'n');
 } while (again === 'y');
 console.log('Application has exited.');
